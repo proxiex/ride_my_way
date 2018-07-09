@@ -1,4 +1,8 @@
 Flask==1.0.2
 Flask-Cors==3.0.6
+Flask-Bcrypt==0.7.1
 SQLAlchemy==1.2.9
 alembic==0.9.10
+bcrypt==3.1.4
+psycopg2-binary==2.7.5
+gunicorn==19.9.0

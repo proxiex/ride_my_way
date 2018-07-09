@@ -4,7 +4,7 @@ from flask import make_response, jsonify
 # method to check whether key is missing in request
 def key_missing_in_body(data):
     # check if key is present in data
-    keys = ('first_name', 'last_name', 'email', 'username', 'password', 'role')
+    keys = ('first_name', 'last_name', 'email', 'username', 'password')
     for key in keys:
         if key not in data:
             return True

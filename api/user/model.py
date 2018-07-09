@@ -27,6 +27,5 @@ class User(Base, Utility):
             self.first_name,
             self.last_name,
             self.username,
-            self.email,
-            self.role
+            self.email
         )
