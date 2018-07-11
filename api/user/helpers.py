@@ -1,4 +1,5 @@
 from flask import make_response, jsonify
+import re
 
 
 # method to check whether key is missing in request
@@ -10,20 +11,21 @@ def key_missing_in_body(data):
             return True
 
 
-def validate_empty_fields(data):
-    """
-    Function to validate empty fields when
-    saving an object
-    :params kwargs
-    """
-    for field in data:
-        if not data.get(field):
-            return True
-
-
 # string string to remove white spaces
 def strip_clean(string):
     return string.strip()
+
+
+# method to check whether email is valid
+def is_valid_email(email):
+    match = re.search(
+        r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9.]*\.*[com|org|edu]{3}$)",
+        email
+    )
+    if match:
+        return True
+    else:
+        return False
 
 
 def is_valid(name_string):
