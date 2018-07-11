@@ -1,0 +1,8 @@
+# .coveragerc
+[report]
+show_missing = True
+omit =
+    */python?.?/*
+
+[html]
+directory=html_coverage_report
