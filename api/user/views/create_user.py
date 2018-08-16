@@ -20,7 +20,7 @@ class RegisterAPI:
                     'fail',
                     'Please pass in data',
                     400,
-                    'first_name: str, last_name: str, username: str, email: str, password: str, role: str',  # noqa: E501
+                    'first_name: str, last_name: str, username: str, email: str, password: str',  # noqa: E501
                     )
 
             if not request.get_json(force=True):
@@ -38,7 +38,7 @@ class RegisterAPI:
                     'fail',
                     'All fields are requried',
                     400,
-                    'first_name: str, last_name: str, username: str, email: str, password: str, role: str',  # noqa: E501
+                    'first_name: str, last_name: str, username: str, email: str, password: str',  # noqa: E501
                     )  # noqa: E501
 
             first_name = data['first_name']

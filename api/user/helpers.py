@@ -33,14 +33,15 @@ def is_valid(name_string):
     return any(char in special_character for char in name_string)
 
 
-def response_msg(status, msg, status_code, help_msg=None, data=None):
+def response_msg(status, msg, status_code, help_msg=None, data=None, token=None):  # noqa: E501
     """ Response Message
     :param:
         :status: string
         :msg: string
         :status_code: integer
-        :help_msg: string | deffault: None
-        :data: dict | deffault: None
+        :help_msg: string | default: None
+        :data: dict | default: None
+        :token: token | default: None
     :return:
         Json object
     """
@@ -55,5 +56,8 @@ def response_msg(status, msg, status_code, help_msg=None, data=None):
 
     if data:
         response['data'] = data
+
+    if token:
+        response['token'] = token
 
     return make_response(jsonify(response)), status_code
